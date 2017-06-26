@@ -8,6 +8,7 @@ namespace MsgCenterSample
 {
 	public partial class Page2 : ContentPage
 	{
+		public static Page2 instance = new Page2();
 		public Page2()
 		{
 			InitializeComponent();
@@ -16,17 +17,11 @@ namespace MsgCenterSample
 			{
 				DisplayToastOnSuccessfulSubmission();
 
-			});
-			//MessagingCenter.Subscribe<Page6>(this, "SaveToastPage26666", (sender) =>
-		 //   {
-			//DisplayToastOnSuccessfulSubmission();
-
-		 //   });
+			}); 
 			NavigationPage.SetBackButtonTitle(new Page1(), "Page1");
-		}
+		} 
 
-		public static Page2 instance = new Page2();
-
+		//singleton class added
 		public static Page2 GetPage2Instance()
 		{
 			if (instance == null)
