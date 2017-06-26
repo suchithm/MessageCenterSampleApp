@@ -23,7 +23,7 @@ namespace MsgCenterSample
 
 		async void Handle_Next(object sender, System.EventArgs e)
 		{
-			await App.NavigationRef.PushAsync(new Page2(), true);
+			await App.NavigationRef.PushAsync( Page2.GetPage2Instance(), true);
 		}
 	}
 }

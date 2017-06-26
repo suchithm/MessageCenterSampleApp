@@ -9,7 +9,7 @@ namespace MsgCenterSample
 	public partial class Page2 : ContentPage
 	{
 		public static Page2 instance = new Page2();
-		public Page2()
+		private Page2()
 		{
 			InitializeComponent();
 			MessagingCenter.Unsubscribe<Page2>(this, "SaveToastPage2");
