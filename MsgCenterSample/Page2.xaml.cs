@@ -11,8 +11,8 @@ namespace MsgCenterSample
 		public Page2()
 		{
 			InitializeComponent();
-			MessagingCenter.Unsubscribe<Page6>(this, "SaveToastPage2");
-			MessagingCenter.Subscribe<Page6>(this, "SaveToastPage2", (sender) =>
+			MessagingCenter.Unsubscribe<Page2>(this, "SaveToastPage2");
+			MessagingCenter.Subscribe<Page2>(this, "SaveToastPage2", (sender) =>
 			{
 				DisplayToastOnSuccessfulSubmission();
 
@@ -24,6 +24,18 @@ namespace MsgCenterSample
 		 //   });
 			NavigationPage.SetBackButtonTitle(new Page1(), "Page1");
 		}
+
+		public static Page2 instance = new Page2();
+
+		public static Page2 GetPage2Instance()
+		{
+			if (instance == null)
+			{
+				return new Page2();
+			}
+			return instance;
+		}
+
 
 		async void Handle_Clicked(object sender, System.EventArgs e)
 		{
